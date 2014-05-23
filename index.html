@@ -12,12 +12,12 @@
     
     <script type="text/javascript">
       var circle1 = new circleDonutChart('example1');
-      circle.draw({end:90,start:0, maxValue:100, titlePosition:"outer-top", titleText:"Your happiness", outerCircleColor:'#0085c8', innerCircleColor:'#909081'});
-      setInterval(2500, function(){
-        circle.draw({end:circle.getValue()+10+10*Math.random()});
+      circle1.draw({end:90,start:0, maxValue:100, titlePosition:"outer-top", titleText:"Your happiness", outerCircleColor:'#0085c8', innerCircleColor:'#909081'});
+      setInterval(function(){
+        circle1.draw( {end:circle1.getValue()+10+10*Math.random()} );
     
         }
-      });
+      }, 2500);
 
     </script>
     <!--[if lt IE 9]>
