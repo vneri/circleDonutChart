@@ -12,12 +12,14 @@ Library Usage
 -------------
 
 You can include the library into your project
-```<script type="text/javascript" src="circleDonutChart.js"></script>
-
+```
+<script type="text/javascript" src="circleDonutChart.js"></script>
+```
 and instatiate as many circles as you need.
 
-```var circle = new circleDonutChart('myChartTitle');
-
+```
+var circle = new circleDonutChart('myChartTitle');
+```
 The 'myChartTitle' is the ID of the target element, into which the SVG will be created.
 
 Provided Methods
@@ -35,7 +37,9 @@ Drawing Options
 ---------------
 
 The drawing options are passed as an object to the "draw" method.
-```circle.draw({end:90,start:0, maxValue:100, titlePosition:"outer-top", titleText:"Consumption", outerCircleColor:'#0085c8', innerCircleColor:'#909081'});
+```
+circle.draw({end:90,start:0, maxValue:100, titlePosition:"outer-top", titleText:"Consumption", outerCircleColor:'#0085c8', innerCircleColor:'#909081'});
+```
 
 There are several drawing options that can influence, how your chart is displayed.
 	start					starting value, ignored if chart already has a status
