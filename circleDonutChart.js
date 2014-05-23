@@ -134,7 +134,6 @@ var circleDonutChart = function(chartElementID){
 		// text scaling
 		if ((text>=1000)&&(textScaling=1)){
 			textScaling=1-((Math.floor( (Math.log(text)/Math.log(10))-2))/10)-0.1;
-			console.log(textScaling);
 			tNumberDOM.setAttribute('font-size', 50*scaling*textScaling);
 			tUnitDOM.setAttribute('font-size', 30*scaling*textScaling);
 		} else{
@@ -451,7 +450,7 @@ var circleDonutChart = function(chartElementID){
 		
 		options.end = options.end/maxValue*360;
 		endValue = options.end;
-		console.log(options.scaling, '    ',textShift);
+		
 		textShift = textShift*options.scaling;
 		
 		// set the size and the center
