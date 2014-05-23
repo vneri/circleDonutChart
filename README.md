@@ -25,8 +25,14 @@ The 'myChartTitle' is the ID of the target element, into which the SVG will be c
 Provided Methods
 ----------------
 
+
 The library provides the following methods for the chart object:
-draw |	draws the chart based on the given options
+<table>
+	<tr>
+		<td>draw</td><td>draws the chart based on the given options</td>
+	</tr>
+</table>
+
 |	omitting options set by the first draw actualized the values
 setValue | sets a value, without animating the circle
 getValue | returns the actual value
