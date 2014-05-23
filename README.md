@@ -25,7 +25,6 @@ The 'myChartTitle' is the ID of the target element, into which the SVG will be c
 Provided Methods
 ----------------
 
-
 The library provides the following methods for the chart object:
 <table>
 	<tr><td>draw</td><td>draws the chart based on the given options</td></tr>
@@ -34,14 +33,8 @@ The library provides the following methods for the chart object:
 	<tr><td>getValue</td><td>returns the actual value</td></tr>
 	<tr><td>delete</td><td>delete the chart object</td></tr>
 	<tr><td>reload</td><td>reload the chart object and initialize with standard parameters</td></tr>
-	
+
 </table>
-
-
-
-
-
-
 
 Drawing Options
 ---------------
@@ -66,7 +59,7 @@ There are several drawing options that can influence, how your chart is displaye
 	<tr><td>setValue()</td><td>sets a value without animation</td></tr>
 	<tr><td>unitText</td><td>sets the unit for the shown number</td></tr>
 	<tr><td>maxValue</td><td>optional parameter that overrides 100%  with a maximal Value</td></tr>
-	<tr><td>titleText</td><td>A title for the Chart (< 12 chars for inner-bottom and inner-top readibility)</td></tr>
+	<tr><td>titleText</td><td>A title for the Chart (less than 12 chars for inner-bottom and inner-top readibility)</td></tr>
 	<tr><td>titlePosition</td><td>where the title gets displayed, ["outer-bottom" | "outer-top" | "inner-bottom" | "inner-top"]</td></tr>
 	<tr><td>titleColor</td><td>ovverrides the standard colors for the title</td></tr>
 </table>
@@ -77,4 +70,5 @@ Example
 
 License
 -------
-MIT
+Copyright 2013-2014 by Valerio Neri
+http://opensource.org/licenses/MIT
