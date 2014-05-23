@@ -26,12 +26,12 @@ Provided Methods
 ----------------
 
 The library provides the following methods for the chart object:
-	draw				draws the chart based on the given options
-					omitting options set by the first draw actualized the values
-	setValue			sets a value, without animating the circle
-	getValue			returns the actual value
-	delete				delete the chart object
-	reload				reload the chart object and initialize with standard parameters
+draw |	draws the chart based on the given options
+|	omitting options set by the first draw actualized the values
+setValue | sets a value, without animating the circle
+getValue | returns the actual value
+delete | delete the chart object
+reload | reload the chart object and initialize with standard parameters
 
 Drawing Options
 ---------------
