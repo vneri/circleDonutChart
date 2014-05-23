@@ -12,19 +12,32 @@ Library Usage
 -------------
 
 You can include the library into your project
-´´´´<script type="text/javascript" src="circleDonutChart.js"></script>
+```<script type="text/javascript" src="circleDonutChart.js"></script>
 
 and instatiate as many circles as you need.
 
-´´´´var circle = new circleDonutChart('myChartTitle');
+```var circle = new circleDonutChart('myChartTitle');
 
 The 'myChartTitle' is the ID of the target element, into which the SVG will be created.
+
+Provided Methods
+----------------
+
+The library provides the following methods for the chart object:
+	draw				draws the chart based on the given options
+					omitting options set by the first draw actualized the values
+	setValue			sets a value, without animating the circle
+	getValue			returns the actual value
+	delete				delete the chart object
+	reload				reload the chart object and initialize with standard parameters
 
 Drawing Options
 ---------------
 
+The drawing options are passed as an object to the "draw" method.
+```circle.draw({end:90,start:0, maxValue:100, titlePosition:"outer-top", titleText:"Consumption", outerCircleColor:'#0085c8', innerCircleColor:'#909081'});
+
 There are several drawing options that can influence, how your chart is displayed.
-	
 	start					starting value, ignored if chart already has a status
 	end			 			ending value [mandatory]
 	outerCircleColor		ovverrides the color of outer circle
@@ -41,6 +54,10 @@ There are several drawing options that can influence, how your chart is displaye
 	titleText				A title for the Chart (<12 chars for inner-bottom and inner-top readibility)
 	titlePosition			where the title gets displayed, ["outer-bottom" | "outer-top" | "inner-bottom" | "inner-top"]
 	titleColor				ovverrides the standard colors for the title
+
+
+Example
+-------
 
 
 License
