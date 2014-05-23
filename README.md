@@ -28,7 +28,7 @@ Provided Methods
 The library provides the following methods for the chart object:
 <table>
 	<tr><td>draw</td><td>draws the chart based on the given options</td></tr>
-	<tr><td>draw (after first draw)</td><td>omitting options set by the first draw actualized the values</td></tr>
+	<tr><td>draw (after first draw)</td><td>omitting color options possible</td></tr>
 	<tr><td>setValue</td><td>sets a value, without animating the circle</td></tr>
 	<tr><td>getValue</td><td>returns the actual value</td></tr>
 	<tr><td>delete</td><td>delete the chart object</td></tr>
@@ -66,7 +66,7 @@ There are several drawing options that can influence, how your chart is displaye
 
 Example
 -------
-
+See http://vneri.github.io/circleDonutChart/
 
 License
 -------
