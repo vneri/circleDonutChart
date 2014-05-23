@@ -17,7 +17,7 @@
       circle2.draw({end:10,start:0, maxValue:300, unitText:'s', titlePosition:"outer-top", titleText:"Seconds before you download this", outerCircleColor:'#0085c8', innerCircleColor:'#004081'});
       setInterval(function(){
         circle1.draw( {end:100*Math.random()} );
-        circle2.draw( {end:300*Math.random(), unitText:'s'} );
+        circle2.draw( {end:300*Math.random(), unitText:'s', maxValue:300} );
         
       }, 2100);
 
