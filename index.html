@@ -15,7 +15,7 @@
       var circle2 = new circleDonutChart('example2');
       circle1.draw({end:75,start:0, maxValue:100, titlePosition:"outer-top", titleText:"Your happiness", outerCircleColor:'#0085c8', innerCircleColor:'#909081'});
       circle2.draw({end:10,start:0, maxValue:300, unitText:'s', titlePosition:"outer-top", titleText:"Seconds before you download this", outerCircleColor:'#0085c8', innerCircleColor:'#004081'});
-      document.addEventListener('mousemove', moveAround, false);
+      document.addEventListener('mousedown', moveAround, false);
       function moveAround(){
         circle1.draw( {end:100*Math.random()} );
         circle2.draw( {end:300*Math.random(), unitText:'s', maxValue:300} );
