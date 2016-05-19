@@ -87,7 +87,7 @@ var circleDonutChart = function(chartElementID){
 	(function() {
 		var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
 		window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-		window.requestAnimationFrame = requestAnimationFram;e
+		window.requestAnimationFrame = requestAnimationFrame;
 	})();
 
 	this.getValue = function(){
@@ -234,8 +234,7 @@ var circleDonutChart = function(chartElementID){
 		var rect = chart.getBoundingClientRect();
 		var top = window.pageYOffset || document.documentElement.scrollTop;
 		var left = window.pageXOffset || document.documentElement.scrollLeft;
-		document.title = "Top "+top+ "   Left "+left;
-		
+
 		if ((rect.top>=0)&&(rect.top+rect.height<window.innerHeight) && 
 			(rect.left>=0)&&(rect.left+rect.width<window.innerWidth)){
 			// this means that we fully see the chart
