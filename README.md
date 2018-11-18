@@ -41,7 +41,7 @@ Drawing Options
 
 The drawing options are passed as an object to the "draw" method.
 ```
-circle.draw({end:90,start:0, maxValue:100, titlePosition:"outer-top", titleText:"Consumption", outerCircleColor:'#0085c8', innerCircleColor:'#909081'});
+circle.draw({end:90,start:0, maxValue:100, titlePosition:"outer-top", titleText:"Consumption", outerCircleColor:'#0085c8', innerCircleColor:'#909081', angleOfStart:0});
 ```
 
 There are several drawing options that can influence, how your chart is displayed.
@@ -61,7 +61,8 @@ There are several drawing options that can influence, how your chart is displaye
 	<tr><td>maxValue</td><td>optional parameter that overrides 100%  with a maximal Value</td></tr>
 	<tr><td>titleText</td><td>A title for the Chart (less than 12 chars for inner-bottom and inner-top readibility)</td></tr>
 	<tr><td>titlePosition</td><td>where the title gets displayed, ["outer-bottom" | "outer-top" | "inner-bottom" | "inner-top"]</td></tr>
-	<tr><td>titleColor</td><td>ovverrides the standard colors for the title</td></tr>
+	<tr><td>titleColor</td><td>overrides the standard colors for the title</td></tr>
+	<tr><td>angleOfStart</td><td>overrides the start of the circle. Standard is 90 degrees (3 o'clock)</td></tr>
 </table>
 
 Example
