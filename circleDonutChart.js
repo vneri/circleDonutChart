@@ -1,6 +1,5 @@
 /*
-	circleDonutChart - (c) by Valerio Neri - 2013
-	Version 1.93
+	circleDonutChart - (c) by Valerio Neri - 2013 - 2018
 	
 	Usage:
 	create a new chart:
@@ -35,7 +34,8 @@
 	maxValue				optional parameter that overrides 100%  with a maximal Value
 	titleText				A title for the Chart (<12 chars for inner-bottom and inner-top readibility)
 	titlePosition			where the title gets displayed, ["outer-bottom" | "outer-top" | "inner-bottom" | "inner-top"]
-	titleColor				ovverrides the standard colors for the title
+	titleColor				overrides the standard colors for the title
+	angleOfStart			the standard starting position is at 3 o'clock (90 degrees)- the value can be overridden. Values are from 0 to 360.
 			
 */
 			
@@ -77,6 +77,7 @@ var circleDonutChart = function(chartElementID){
 	var titleColor = "#ffffff";
 	var textShift = 20; // this is required for moving the chart
 	var textScaling = 1;
+	var angleOfStart = 90;
 
 	// update: unfortunately in some cases the event is fired, and nobody tells us - that's why we just wait for the element to be available
 	// wait for the DOM, otherwise you won't find the reference to elements
@@ -223,7 +224,7 @@ var circleDonutChart = function(chartElementID){
 		return d;
 	}
 
-	// this function checks, if an element is fully visible (according to the scrolling)
+	// this function checks, if an element is partly visible (according to the scrolling)
 	function checkVisible(){
 		if (firedAnimation){
 			// animation has already fired, detach the event listeners
@@ -235,9 +236,9 @@ var circleDonutChart = function(chartElementID){
 		var top = window.pageYOffset || document.documentElement.scrollTop;
 		var left = window.pageXOffset || document.documentElement.scrollLeft;
 
-		if ((rect.top>=0)&&(rect.top+rect.height<window.innerHeight) && 
-			(rect.left>=0)&&(rect.left+rect.width<window.innerWidth)){
-			// this means that we fully see the chart
+		if ((rect.top>=0)&&(rect.top <window.innerHeight) && 
+			(rect.left>=0)&&(rect.left <window.innerWidth)){
+			// this means that we partly see the chart
 			// fire the animation (only once)
 			firedAnimation = true;
 			setAnimate(startValue, endValue, (500/animationSpeed));					
@@ -349,6 +350,8 @@ var circleDonutChart = function(chartElementID){
 		oTester.titleText = typeof(options.titleText)!="undefined";
 		oTester.titleColor = typeof(options.titleColor)!="undefined";
 		oTester.titlePosition = typeof(options.titlePosition)!="undefined";
+		oTester.angleOfStart = typeof(options.angleOfStart)!="undefined";
+		
 		
 		if (! (oTester.end)){
 			throw('circleDonutChart: draw() - No "end" value specified');
@@ -466,8 +469,11 @@ var circleDonutChart = function(chartElementID){
 			animationSpeed = options.animationSpeed;
 		}
 		
-		
-		
+		if(oTester.angleOfStart){
+			// correct the values with mod 360. Take negative values into account
+			angleOfStart = Math.abs( (360 + options.angleOfStart) % 360);
+		}		
+
 		// initialise with start position
 		outerCircleDOM.setAttribute('d', getD(startValue));
 		
@@ -489,6 +495,8 @@ var circleDonutChart = function(chartElementID){
 		outerCircleDOM.setAttribute('fill', outerCircleColor);
 		outerCircleDOM.setAttribute('stroke', 'none');
 		outerCircleDOM.setAttribute('stroke-width', '36');
+		// rotate is used to set the starting angle for the path
+		outerCircleDOM.setAttribute('transform', 'rotate('+(360 + angleOfStart-90)+' ' +centerx+' '+centery+' )');
 		
 		tNumberDOM.setAttribute('x', centerx);
 		tNumberDOM.setAttribute('y', centery+Math.round(18.75*options.scaling));
