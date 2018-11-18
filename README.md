@@ -1,7 +1,7 @@
 circleDonutChart
 ================
 
-A javascript library for a flexible flat donut chart
+A JavaScript library for a flexible flat donut chart.
 
 This library takes your parameters and displays a circle donut (in flat style). 
 The displaying is performed by writing an SVG graphic into a provided DIV element.
